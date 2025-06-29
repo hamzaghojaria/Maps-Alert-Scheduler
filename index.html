@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Maps Alert App</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+</head>
+
+<body>
+  <div class="container">
+    <!-- Left Side Panel -->
+    <div class="left-panel">
+      <div id="clock-wrapper">
+        <span id="clock"></span>
+      </div>
+      <div class="site-guide">
+        <p>📌 <strong>What does this app do?</strong><br>
+          This Maps Alert App helps you plan trips, visualize routes on a map, and get email alerts before your
+          departure. Just enter start and end locations, select your travel mode, and we'll handle the rest—alerts, ETA,
+          and distance included!
+        </p>
+      </div>
+
+      <h1>Maps Alert Scheduler</h1>
+
+      <!-- Trip Scheduler Form -->
+      <form id="tripForm">
+        <!-- Start Location -->
+        <label for="start">Start Location 🚩</label>
+        <div class="input-group">
+          <input type="text" id="start" placeholder="Enter Start Location" autocomplete="off" />
+          <div id="startSuggestions" class="suggestions-box"></div>
+        </div>
+
+        <!-- End Location -->
+        <label for="end">End Location 📍</label>
+        <div class="input-group">
+          <input type="text" id="end" placeholder="Enter Destination" autocomplete="off" />
+          <div id="endSuggestions" class="suggestions-box"></div>
+        </div>
+
+        <!-- Departure Time -->
+        <label for="time">Departure Time</label>
+        <div class="input-icon-wrapper">
+          <input type="datetime-local" id="time" required />
+        </div>
+
+
+
+        <!-- Offset -->
+        <label for="offset">Trip Reminder (in minutes)⏳</label>
+        <input type="number" id="offset" min="1" value="10" required />
+
+        <!-- Email -->
+        <label for="email">Email Address 📬</label>
+        <input type="email" id="email" placeholder="Enter your email (optional)" />
+
+        <!-- Mode -->
+        <label for="mode">Mode of Transport 🚙</label>
+        <select id="mode" required>
+          <option value="driving" selected>🚗 Driving</option>
+          <option value="walking">🚶 Walking</option>
+          <option value="cycling">🚴 Cycling</option>
+          <option value="motorcycle">🏍️ Motorcycle</option>
+          <option value="scooter">🛵 Scooter</option>
+          <option value="transit">🚌 Public Transit</option>
+        </select>
+
+        <!-- Submit -->
+        <button type="submit">🚀 Schedule Trip</button>
+      </form>
+
+      <!-- Trip Summary -->
+      <div class="trip-summary-block info-card">
+        <h2>🚀 Trip Summary</h2>
+        <ul id="tripList"></ul>
+      </div>
+    </div>
+
+    <!-- Right Side Map -->
+    <div id="map"></div>
+  </div>
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
