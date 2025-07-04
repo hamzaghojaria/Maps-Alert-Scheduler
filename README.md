@@ -1,6 +1,6 @@
 # 🗺️ Maps Alert Scheduler
 
-The **Maps Alert App** is a trip scheduling tool that allows users to plan routes, visualize them on an interactive map, and receive timely email reminders before departure.
+The **Maps Alert Scheduler** is a trip scheduling tool that allows users to plan routes, visualize them on an interactive map, and receive timely email reminders before departure.
 
 ---
 
@@ -19,5 +19,5 @@ The **Maps Alert App** is a trip scheduling tool that allows users to plan route
 - **Frontend**: HTML, CSS, JavaScript
 - **Map Library**: [Leaflet.js](https://leafletjs.com/)
 - **Icons**: Font Awesome
-- **Backend**: *(Assumed FastAPI or similar – update as per actual stack)*
-- **Email Alerts**: *(Specify SMTP or third-party integration if used)*
+- **Backend**: FastAPI
+- **Email Alerts**: SMTP
